@@ -1,5 +1,4 @@
-import 'package:attendancewithfingerprint/screen/personal_info.dart';
-// import 'package:attendancewithfingerprint/screen/scan_qr_page.dart';
+import 'package:attendancewithfingerprint/screen/scan_qr_page.dart';
 import 'package:attendancewithfingerprint/utils/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: P_info(key:  null as Key,),
+      home: ScanQrPage(),
     );
   }
 }
