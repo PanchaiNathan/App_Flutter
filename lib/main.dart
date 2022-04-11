@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: main_title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        primaryColor: Colors.blue,
+        primaryColor: Colors.blue.shade500,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ScanQrPage(),
