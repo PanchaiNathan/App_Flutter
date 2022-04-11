@@ -11,11 +11,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 class P_info extends StatefulWidget {
-  const P_info({Key key}) : super(key: key);
+  const P_info({required Key key}) : super(key: key);
 
   @override
   _P_info createState() => _P_info();
-  static _P_info of(BuildContext context) => context.findAncestorStateOfType<_P_info>();
+  static _P_info? of(BuildContext context) => context.findAncestorStateOfType<_P_info>();
 }
 
 class _P_info extends State<P_info> {
@@ -69,7 +69,7 @@ class _P_info extends State<P_info> {
   bool increate = false;
   bool isLoading = false;
 
-  Locale _locale;
+  Locale? _locale;
   bool _autoValidate = true;
 
   void setLocale(Locale value) {
@@ -81,9 +81,9 @@ class _P_info extends State<P_info> {
     this.setState(() {
       inProcess = true;
     });
-    XFile image = await ImagePicker().pickImage(source: source);
+    XFile? image = await ImagePicker().pickImage(source: source);
     if (image != null) {
-      File cropped = await ImageCropper().cropImage(
+      File? cropped = await ImageCropper().cropImage(
           sourcePath: image.path,
           aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
           compressQuality: 100,
@@ -111,9 +111,9 @@ class _P_info extends State<P_info> {
     this.setState(() {
       increate = true;
     });
-    XFile image = await ImagePicker().pickImage(source: source);
+    XFile? image = await ImagePicker().pickImage(source: source);
     if (image != null) {
-      File cropped = await ImageCropper().cropImage(
+      File? cropped = await ImageCropper().cropImage(
           sourcePath: image.path,
           aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
           compressQuality: 100,
