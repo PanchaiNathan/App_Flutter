@@ -7,7 +7,7 @@ class SingleMenu extends StatelessWidget {
   final action;
 
   SingleMenu(
-      {@required this.icon, @required this.menuName, this.color, this.action});
+      {required this.icon, required this.menuName, required this.color, this.action});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class SingleMenu extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 30.0),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey[300], width: 0.5),
+            border: Border.all(color: Colors.grey, width: 0.5),
           ),
           child: Column(
             children: [

@@ -19,7 +19,7 @@ class AttendancePage extends StatefulWidget {
   final String query;
   final String title;
 
-  AttendancePage({this.query, this.title});
+  AttendancePage({required this.query, required this.title});
 
   @override
   _AttendancePageState createState() => _AttendancePageState();
@@ -27,7 +27,7 @@ class AttendancePage extends StatefulWidget {
 
 class _AttendancePageState extends State<AttendancePage> {
   // Progress dialog
-  ProgressDialog pr;
+  ProgressDialog? pr;
 
   final LocalAuthentication _localAuthentication = LocalAuthentication();
 
@@ -38,13 +38,13 @@ class _AttendancePageState extends State<AttendancePage> {
   Utils utils = Utils();
 
   // Model settings
-  Settings settings;
+  Settings? settings;
 
   // Global key scaffold
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   // String
-  String getUrl,
+  String? getUrl,
       getKey,
       getQrId,
       getQuery,
@@ -53,10 +53,10 @@ class _AttendancePageState extends State<AttendancePage> {
       getPathArea = 'api/area/index';
 
   var getId, _value;
-  bool _isMockLocation, clickButton = false;
+  bool? _isMockLocation, clickButton = false;
 
   // Geolocation
-  Position _currentPosition;
+  Position? _currentPosition;
   final Geolocator geoLocator = Geolocator()..forceAndroidLocationManager;
   var subscription;
   double setAccuracy = 100.0;
@@ -80,8 +80,8 @@ class _AttendancePageState extends State<AttendancePage> {
   }
 
   getAreaApi() async {
-    pr.show();
-    final uri = utils.getRealUrl(getUrl, getPathArea);
+    pr?.show();
+    final uri = utils.getRealUrl(getUrl!, getPathArea!);
     print(uri);
 
     Dio dio = Dio();
@@ -100,7 +100,7 @@ print(data);
 
 
     setState(() {
-      pr.hide();
+      pr?.hide();
     });
   }
 
@@ -124,7 +124,7 @@ print(data);
           _currentPosition = position;
         });
 
-        _getAddressFromLatLng(_currentPosition.accuracy);
+        _getAddressFromLatLng(_currentPosition?.accuracy as double);
       }
     });
   }
@@ -159,12 +159,12 @@ print(data);
 
   // Send data post via http
   sendData() async {
-    pr.show();
+    pr?.show();
 
     if (_value == null) {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
-          pr.hide();
+          pr?.hide();
 
           utils.showAlertDialog(
               select_area, "warning", AlertType.warning, _scaffoldKey, true);
@@ -181,13 +181,13 @@ print(data);
       'key': "Cgm6AXfzvy58yFMmweLDL7WqdjBHf5ysXDFCsQpm",
       'worker_id': getId,
       'q': dataQuery,
-      'lat': _currentPosition.latitude,
-      'longt': _currentPosition.longitude,
+      'lat': _currentPosition?.latitude,
+      'longt': _currentPosition?.longitude,
       'area_id': _value,
     };
 // print(body);
     // Sending the data to server
-    final uri = utils.getRealUrl(getUrl, getPath);
+    final uri = utils.getRealUrl(getUrl!, getPath!);
     print(uri);
     Dio dio = Dio();
     FormData formData = FormData.fromMap(body);
@@ -205,7 +205,7 @@ print(data);
           date: data['date'],
           time: data['time'],
           location: data['location'],
-          type: data['query']);
+          type: data['query'], id:  null as int);
 
       // Insert the settings
       insertAttendance(attendance);
@@ -215,9 +215,9 @@ print(data);
         if (mounted) {
           setState(() {
             subscription.cancel();
-            pr.hide();
+            pr?.hide();
             Alert(
-              context: _scaffoldKey.currentContext,
+              context: _scaffoldKey.currentContext as BuildContext,
               type: AlertType.success,
               title: "Success",
               desc: "$attendance_show_alert-$dataQuery $attendance_success_ms",
@@ -242,7 +242,7 @@ print(data);
     } else if (data['message'] == 'cannot attend') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
-          pr.hide();
+          pr?.hide();
 
           utils.showAlertDialog(
               outside_area, "warning", AlertType.warning, _scaffoldKey, true);
@@ -251,7 +251,7 @@ print(data);
     } else if (data['message'] == 'location not found') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
-          pr.hide();
+          pr?.hide();
 
           utils.showAlertDialog(location_not_found, "warning",
               AlertType.warning, _scaffoldKey, true);
@@ -260,7 +260,7 @@ print(data);
     } else if (data['message'] == 'already check-in') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
-          pr.hide();
+          pr?.hide();
 
           utils.showAlertDialog(already_check_in, "warning", AlertType.warning,
               _scaffoldKey, true);
@@ -269,7 +269,7 @@ print(data);
     } else if (data['message'] == 'check-in first') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
-          pr.hide();
+          pr?.hide();
 
           utils.showAlertDialog(
               check_in_first, "warning", AlertType.warning, _scaffoldKey, true);
@@ -278,7 +278,7 @@ print(data);
     } else if (data['message'] == 'Error! Something Went Wrong!') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
-          pr.hide();
+          pr?.hide();
 
           utils.showAlertDialog(attendance_error_server, "Error",
               AlertType.error, _scaffoldKey, true);
@@ -287,7 +287,7 @@ print(data);
     } else {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
-          pr.hide();
+          pr?.hide();
 
           utils.showAlertDialog(response.data.toString(), "Error",
               AlertType.error, _scaffoldKey, true);
@@ -351,14 +351,14 @@ print(data);
 
   CheckMockIsNull() async {
     // Check if user click button attendance
-    if (clickButton) {
+    if (clickButton as bool) {
       // Check mock is already get status
       if (_isMockLocation == null) {
         Future.delayed(Duration(seconds: 0)).then((value) {
           // Check if pr is showing or not
-          if (!pr.isShowing()) {
-            pr.show();
-            pr.update(
+          if (!pr!.isShowing()) {
+            pr?.show();
+            pr?.update(
               progress: 50.0,
               message: check_mock,
               progressWidget: Container(
@@ -381,8 +381,8 @@ print(data);
           // Detect mock is true, mean user use fake gps
           setState(() {
             clickButton = false;
-            if (pr.isShowing()) {
-              pr.hide();
+            if (pr!.isShowing()) {
+              pr?.hide();
             }
           });
 
@@ -393,8 +393,8 @@ print(data);
         Future.delayed(Duration(seconds: 0)).then((value) async {
           setState(() {
             clickButton = false;
-            if (pr.isShowing()) {
-              pr.hide();
+            if (pr!.isShowing()) {
+              pr?.hide();
             }
           });
 
@@ -417,7 +417,7 @@ print(data);
     pr = ProgressDialog(context,
         isDismissible: false, type: ProgressDialogType.Normal);
     // Style progress
-    pr.style(
+    pr!.style(
       message: attendance_sending,
       borderRadius: 10.0,
       backgroundColor: Colors.white,

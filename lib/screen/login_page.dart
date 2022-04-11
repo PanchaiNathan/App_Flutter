@@ -17,7 +17,7 @@ enum LoginStatus { notSignIn, signIn, doubleCheck }
 
 class _LoginPageState extends State<LoginPage> {
   LoginStatus _loginStatus = LoginStatus.notSignIn;
-  String email, pass, isLogged, getUrl, getKey;
+  String? email, pass, isLogged, getUrl, getKey;
   String statusLogged = 'logged';
   String getPath = 'api/login';
   final _key = GlobalKey<FormState>();
@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   bool _secureText = true;
   Utils utils = Utils();
   // Progress dialog
-  ProgressDialog pr;
+  ProgressDialog? pr;
 
   // Database
   DbHelper dbHelper = DbHelper();
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
   // Check if all data is ok, will submit the form via API
   check() {
     final form = _key.currentState;
-    if (form.validate()) {
+    if (form!.validate()) {
       form.save();
       login('clickButton');
     }
@@ -69,9 +69,9 @@ class _LoginPageState extends State<LoginPage> {
   // Function communicate with the server via API
   login(String fromWhere) async {
     print("par");
-    var urlLogin = utils.getRealUrl(getUrl, getPath);
+    var urlLogin = utils.getRealUrl(getUrl!, getPath);
     print(urlLogin);
-    if (fromWhere == 'clickButton') pr.show();
+    if (fromWhere == 'clickButton') pr!.show();
 
     Dio dio = new Dio();
     dio.options.headers['Accept'] = 'application/json';
@@ -107,7 +107,7 @@ print(message);
 
         setState(() {
           _loginStatus = LoginStatus.signIn;
-          savePref(isLogged, email, pass, userId);
+          savePref(isLogged!, email, pass!, userId);
         });
       }
     } else {
@@ -130,7 +130,7 @@ print(message);
     Future.delayed(Duration(seconds: 0)).then((value) {
       if (mounted) {
         setState(() {
-          if (fromWhere == 'clickButton') pr.hide();
+          if (fromWhere == 'clickButton') pr!.hide();
         });
       }
     });
@@ -138,15 +138,15 @@ print(message);
 
   removePref() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString("status", null);
-    preferences.setString("email", null);
-    preferences.setString("password", null);
-    preferences.setInt("id", null);
+    preferences.setString("status", null.toString());
+    preferences.setString("email", null.toString());
+    preferences.setString("password", null.toString());
+    preferences.setInt("id", null as int);
   }
 
   // Show snackBar
   getSnackBar(String messageSnackBar) {
-    return _scaffoldKey.currentState
+    return _scaffoldKey.currentState!
         .showSnackBar(SnackBar(content: Text(messageSnackBar)));
   }
 
@@ -189,7 +189,7 @@ print(message);
     // Show progress
     pr = new ProgressDialog(context, type: ProgressDialogType.Normal);
     // Style progress
-    pr.style(
+    pr!.style(
         message: login_checking_progress,
         borderRadius: 10.0,
         backgroundColor: Colors.white,
@@ -247,7 +247,7 @@ print(message);
                         TextFormField(
                           validator: (e) {
                             var message;
-                            if (e.isEmpty) {
+                            if (e!.isEmpty) {
                               message = login_empty_email;
                             }
                             return message;
@@ -260,7 +260,7 @@ print(message);
                         TextFormField(
                           validator: (e) {
                             var message;
-                            if (e.isEmpty) {
+                            if (e!.isEmpty) {
                               message = login_empty_password;
                             }
                             return message;

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: P_info(),
+      home: P_info(key:  null as Key,),
     );
   }
 }

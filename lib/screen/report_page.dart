@@ -10,7 +10,7 @@ class ReportPage extends StatefulWidget {
 
 class _ReportPageState extends State<ReportPage> {
   DbHelper dbHelper = DbHelper();
-  Future<List<Attendance>> attendances;
+  Future<List<Attendance>>? attendances;
 
   @override
   void initState() {
@@ -86,12 +86,12 @@ class _ReportPageState extends State<ReportPage> {
       child: FutureBuilder(
         future: attendances,
         builder: (context, snapshot) {
-          if (null == snapshot.data || snapshot.data.length == 0) {
+          if (null == snapshot.data || snapshot.data == 0) {
             return Center(child: Text(report_no_data));
           }
 
           if (snapshot.hasData) {
-            return dataTable(snapshot.data);
+            return dataTable(snapshot.data as List<Attendance>);
           }
 
           return CircularProgressIndicator();

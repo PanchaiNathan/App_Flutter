@@ -23,7 +23,7 @@ class _ScanQrPageState extends State<ScanQrPage> {
   Utils utils = Utils();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   String _barcode = "";
-  Settings settings;
+  Settings? settings;
   String _isAlreadyDoSettings = 'loading';
 
   Future scan() async {
@@ -46,10 +46,10 @@ class _ScanQrPageState extends State<ScanQrPage> {
         // String getKey = int.parse(data['key']) as String;
 
         // Set the url and key
-        settings = Settings(url: data.indexOf('url').toString(), key: data.indexOf('key').toString());
+        settings = Settings(url: data.indexOf('url').toString(), key: data.indexOf('key').toString(), id: null as int);
         // print(settings);
         // Insert the settings
-        insertSettings(settings);
+        insertSettings(settings!);
       } else {
         print("android");
         utils.showAlertDialog(format_barcode_wrong, "Error", AlertType.error,

@@ -165,7 +165,7 @@ class _MenuState extends State<Menu> {
                     SingleMenu(
                       icon: FontAwesomeIcons.calendar,
                       menuName: main_menu_report,
-                      color: Colors.yellow[700],
+                      color: Colors.yellow,
                       action: () => Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => ReportPage()),
                       ),
@@ -181,7 +181,7 @@ class _MenuState extends State<Menu> {
                     SingleMenu(
                       icon: FontAwesomeIcons.signOutAlt,
                       menuName: 'Logout',
-                      color: Colors.red[300],
+                      color: Colors.red,
                       action: () => _signOut(),
                     ),
                   ],
