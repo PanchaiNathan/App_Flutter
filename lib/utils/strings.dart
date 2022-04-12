@@ -1,5 +1,5 @@
 // App name
-const String app_name = 'Connectivity';
+const String app_name = 'Connectiv';
 
 // About page
 const String  about_title = 'About';
