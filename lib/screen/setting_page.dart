@@ -19,7 +19,7 @@ class _SettingPageState extends State<SettingPage> {
   Utils utils = Utils();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   String _barcode = "";
-  Settings? settings;
+  Settings settings;
 
   Future scan() async {
     try {
@@ -38,7 +38,7 @@ class _SettingPageState extends State<SettingPage> {
         // Set the url and key
         settings = Settings(id: 1, url: getUrl, key: getKey);
         // Update the settings
-        updateSettings(settings!);
+        updateSettings(settings);
       } else {
         utils.showAlertDialog(
             format_barcode_wrong, "Error", AlertType.error, _scaffoldKey, true);

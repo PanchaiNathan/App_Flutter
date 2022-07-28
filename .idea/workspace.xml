@@ -23,8 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff669b7-9e46-467e-ae93-00763cd5d704" name="Default Changelist" comment="main_page_changed">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-04-2022_17_37_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-04-2022_17_37__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/strings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/strings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/database/db_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database/db_helper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/attendance.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/attendance.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/settings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/settings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/attendance_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/attendance_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/personal_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/personal_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/report_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/report_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/scan_qr_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/scan_qr_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/setting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/setting_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/single_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/single_menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +68,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
@@ -60,7 +76,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../employee_app_final-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -120,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649683410817</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="main_page_changed">
+      <created>1649739090837</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649739090837</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">

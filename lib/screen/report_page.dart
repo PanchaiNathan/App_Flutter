@@ -10,7 +10,7 @@ class ReportPage extends StatefulWidget {
 
 class _ReportPageState extends State<ReportPage> {
   DbHelper dbHelper = DbHelper();
-  Future<List<Attendance>>? attendances;
+  Future<List<Attendance>> attendances;
 
   @override
   void initState() {

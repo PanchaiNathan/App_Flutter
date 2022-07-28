@@ -7,7 +7,7 @@ class SingleMenu extends StatelessWidget {
   final action;
 
   SingleMenu(
-      {required this.icon, required this.menuName, required this.color, this.action});
+      { this.icon, this.menuName, this.color, this.action});
 
   @override
   Widget build(BuildContext context) {
