@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:attendancewithfingerprint/model/attendance.dart';
 import 'package:attendancewithfingerprint/screen/main_menu_page.dart';
 import 'package:attendancewithfingerprint/utils/strings.dart';
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -85,7 +87,12 @@ class _AttendancePageState extends State<AttendancePage> {
     print(uri);
 
     Dio dio = Dio();
-
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+      return client;
+    };
       final response = await dio.get(uri);
       print(response.data);
       var data = response.data;
@@ -190,6 +197,12 @@ print(data);
     final uri = utils.getRealUrl(getUrl, getPath);
     print(uri);
     Dio dio = Dio();
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+      return client;
+    };
     FormData formData = FormData.fromMap(body);
     final response = await dio.post(uri, data: formData,options: Options(
       followRedirects: false,
@@ -205,7 +218,7 @@ print(data);
           date: data['date'],
           time: data['time'],
           location: data['location'],
-          type: data['query'], id:  null as int);
+          type: data['query'], id:  null);
 
       // Insert the settings
       insertAttendance(attendance);
@@ -217,7 +230,7 @@ print(data);
             subscription.cancel();
             pr?.hide();
             Alert(
-              context: _scaffoldKey.currentContext as BuildContext,
+              context: _scaffoldKey.currentContext,
               type: AlertType.success,
               title: "Success",
               desc: "$attendance_show_alert-$dataQuery $attendance_success_ms",
@@ -318,9 +331,7 @@ print(data);
   // To retrieve the list of biometric types
   // (if available).
   Future<void> _getListOfBiometricTypes() async {
-    List<BiometricType> listOfBiometrics;
     try {
-      listOfBiometrics = await _localAuthentication.getAvailableBiometrics();
     } on PlatformException catch (e) {
       print(e);
     }
@@ -351,7 +362,7 @@ print(data);
 
   CheckMockIsNull() async {
     // Check if user click button attendance
-    if (clickButton as bool) {
+    if (clickButton) {
       // Check mock is already get status
       if (_isMockLocation == null) {
         Future.delayed(Duration(seconds: 0)).then((value) {

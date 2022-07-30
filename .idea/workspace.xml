@@ -23,23 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff669b7-9e46-467e-ae93-00763cd5d704" name="Default Changelist" comment="main_page_changed">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-04-2022_17_37_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-04-2022_17_37__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/App_Flutter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/App_Flutter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/database/db_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database/db_helper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/attendance.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/attendance.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/settings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/settings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/8484664b9a40e2664d54e30fccf9cda8/gen_dart_plugin_registrant.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/build/8484664b9a40e2664d54e30fccf9cda8/gen_dart_plugin_registrant.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screen/attendance_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/attendance_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screen/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/login_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/personal_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/personal_info.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/report_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/report_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/scan_qr_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/scan_qr_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/setting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/setting_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/single_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/single_menu.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,10 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Pictures/uclap-12/codecanyon-31072993-uclap-on-demand-home-service-app-uc-clone-android-app-with-interactive-admin-panel/UClap PartnerApp v1.2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -143,7 +145,28 @@
       <option name="project" value="LOCAL" />
       <updated>1649739090837</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="main_page_changed">
+      <created>1659008418740</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659008418740</updated>
+    </task>
+    <task id="LOCAL-00008" summary="main_page_changed">
+      <created>1659008478866</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659008478866</updated>
+    </task>
+    <task id="LOCAL-00009" summary="main_page_changed">
+      <created>1659008536233</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659008536233</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">

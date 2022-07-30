@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:attendancewithfingerprint/database/db_helper.dart';
 import 'package:attendancewithfingerprint/screen/main_menu_page.dart';
 import 'package:attendancewithfingerprint/utils/strings.dart';
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:progress_dialog/progress_dialog.dart';
@@ -72,20 +75,27 @@ class _LoginPageState extends State<LoginPage> {
     var urlLogin = utils.getRealUrl(getUrl, getPath);
     print(urlLogin);
     if (fromWhere == 'clickButton') pr.show();
-
+print("PLP");
     Dio dio = new Dio();
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+      return client;
+    };
     dio.options.headers['Accept'] = 'application/json';
     print("qwerty");
     FormData formData =
         new FormData.fromMap({"email": email, "password": pass});
 
     final response = await dio.post(urlLogin, data: formData,options: Options(
-
       followRedirects: false,
       // will not throw errors
       validateStatus: (status) => true,
       // headers: headers,
+
     ),);
+    print(response);
 
     // Return the json data
     var data = response.data;
