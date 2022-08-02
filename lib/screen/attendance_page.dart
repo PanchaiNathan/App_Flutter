@@ -61,7 +61,7 @@ class _AttendancePageState extends State<AttendancePage> {
   Position _currentPosition;
   final Geolocator geoLocator = Geolocator()..forceAndroidLocationManager;
   var subscription;
-  double setAccuracy = 50.0;
+  double setAccuracy = 20.0;
 
   List dataArea = [];
 

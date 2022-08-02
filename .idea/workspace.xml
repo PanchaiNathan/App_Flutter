@@ -22,7 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fff669b7-9e46-467e-ae93-00763cd5d704" name="Default Changelist" comment="main_page_changed">
+    <list default="true" id="fff669b7-9e46-467e-ae93-00763cd5d704" name="Default Changelist" comment="Accuracy changed">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screen/attendance_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/attendance_page.dart" afterDir="false" />
     </list>
@@ -159,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659177332701</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Accuracy changed">
+      <created>1659324761422</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659324761422</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -181,6 +189,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Issued_cleared" />
     <MESSAGE value="main_page_changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="main_page_changed" />
+    <MESSAGE value="Accuracy changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Accuracy changed" />
   </component>
 </project>
