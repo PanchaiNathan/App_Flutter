@@ -114,10 +114,11 @@ print(message);
         isLogged = statusLogged;
         String email = data['user']['email'];
         int userId = data['user']['id'];
+        String name = data['user']['name'];
 
         setState(() {
           _loginStatus = LoginStatus.signIn;
-          savePref(isLogged, email, pass, userId);
+          savePref(isLogged, email, pass, userId, name);
         });
       }
     } else {
@@ -151,7 +152,8 @@ print(message);
     preferences.setString("status", null.toString());
     preferences.setString("email", null.toString());
     preferences.setString("password", null.toString());
-    preferences.setInt("id", null as int);
+    preferences.setInt("id", null);
+    preferences.setString("name", null.toString());
   }
 
   // Show snackBar
@@ -162,13 +164,14 @@ print(message);
 
   // Save the data from json data
   savePref(String getStatus, String getEmployeeId, String getPassword,
-      int getUserId) async {
+      int getUserId, String name) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     setState(() {
       preferences.setString("status", getStatus);
       preferences.setString("email", getEmployeeId);
       preferences.setString("password", getPassword);
       preferences.setInt("id", getUserId);
+      preferences.setString("name", name);
     });
   }
 
@@ -179,6 +182,9 @@ print(message);
       var getStatusSp = preferences.getString("status");
       var getEmail = preferences.getString("email");
       var getPassword = preferences.getString("password");
+      var name = preferences.getString("name");
+      print('8608751032');
+      print(name);
 
       if (getStatusSp == statusLogged) {
         _loginStatus = LoginStatus.doubleCheck;

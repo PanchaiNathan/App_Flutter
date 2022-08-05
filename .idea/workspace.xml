@@ -22,10 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fff669b7-9e46-467e-ae93-00763cd5d704" name="Default Changelist" comment="Accuracy changed">
+    <list default="true" id="fff669b7-9e46-467e-ae93-00763cd5d704" name="Default Changelist" comment="Name inserted">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screen/attendance_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/attendance_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/login_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659324761422</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Accuracy changed">
+      <created>1659418441294</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659418441294</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -190,6 +198,7 @@
     <MESSAGE value="Issued_cleared" />
     <MESSAGE value="main_page_changed" />
     <MESSAGE value="Accuracy changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Accuracy changed" />
+    <MESSAGE value="Name inserted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Name inserted" />
   </component>
 </project>

@@ -54,7 +54,7 @@ class _AttendancePageState extends State<AttendancePage> {
       mAccuracy,
       getPathArea = 'api/area/index';
 
-  var getId, _value;
+  var getId, _value,getName;
   bool _isMockLocation, clickButton = false;
 
   // Geolocation
@@ -69,6 +69,7 @@ class _AttendancePageState extends State<AttendancePage> {
   void initState() {
     super.initState();
     getPref();
+    getname();
     _getCurrentLocation();
     getSettings();
     TrustLocation.start(5);
@@ -162,6 +163,15 @@ print(data);
     setState(() {
       getId = preferences.getInt("id");
     });
+    print(getId);
+  }
+  getname() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      getName = preferences.getString("name");
+    });
+    print("P loves P");
+    print(getName);
   }
 
   // Send data post via http
@@ -204,6 +214,7 @@ print(data);
       return client;
     };
     FormData formData = FormData.fromMap(body);
+    print(formData);
     final response = await dio.post(uri, data: formData,options: Options(
       followRedirects: false,
       validateStatus: (status) => true,
@@ -232,7 +243,7 @@ print(data);
             Alert(
               context: _scaffoldKey.currentContext,
               type: AlertType.success,
-              title: "Success",
+              title: getName + "\n Success" ,
               desc: "$attendance_show_alert-$dataQuery $attendance_success_ms",
               buttons: [
                 DialogButton(
@@ -266,7 +277,7 @@ print(data);
         setState(() {
           pr?.hide();
 
-          utils.showAlertDialog(location_not_found, "warning",
+          utils.showAlertDialog(location_not_found,  "warning",
               AlertType.warning, _scaffoldKey, true);
         });
       });
@@ -275,7 +286,7 @@ print(data);
         setState(() {
           pr?.hide();
 
-          utils.showAlertDialog(already_check_in, "warning", AlertType.warning,
+          utils.showAlertDialog(already_check_in, getName + " \n warning", AlertType.warning,
               _scaffoldKey, true);
         });
       });
@@ -285,7 +296,7 @@ print(data);
           pr?.hide();
 
           utils.showAlertDialog(
-              check_in_first, "warning", AlertType.warning, _scaffoldKey, true);
+              check_in_first, getName + " \n warning", AlertType.warning, _scaffoldKey, true);
         });
       });
     } else if (data['message'] == 'Error! Something Went Wrong!') {
