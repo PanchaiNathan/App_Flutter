@@ -170,8 +170,8 @@ print(data);
     setState(() {
       getName = preferences.getString("name");
     });
-    print("P loves P");
-    print(getName);
+    // print("P loves P");
+    // print(getName);
   }
 
   // Send data post via http
